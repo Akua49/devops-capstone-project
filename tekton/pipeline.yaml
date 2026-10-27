@@ -79,6 +79,8 @@ spec:
       params:
         - name: IMAGE
           value: "$(params.build-image)"
+        - name: BUILD_EXTRA_ARGS
+          value: "--ulimit nproc=100000:100000"
       runAfter:
         - tests
         - lint
